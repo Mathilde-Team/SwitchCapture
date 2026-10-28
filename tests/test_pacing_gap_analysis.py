@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de `analyze_pacing_gaps` et `format_pacing_analysis_report` (switch_capture_core).
 
 Couvre le volet nouvellement ajouté du point #1 de la section « Pas

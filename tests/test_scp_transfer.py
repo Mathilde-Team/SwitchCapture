@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests des fonctions de transfert SCP (`open_scp_ssh_client`/`scp_get`/
 `scp_put`/`list_remote_pcap_files`/`delete_remote_file`/
 `delete_remote_all_file_capture`).

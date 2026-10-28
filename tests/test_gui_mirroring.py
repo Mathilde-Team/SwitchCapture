@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du câblage GTK4 du bloc « Port mirroring » sur le formulaire
 principal (voir features.md, section « Urgences », point 18 : le
 formulaire ne permettait pas de choisir entre packet-capture/SCP,

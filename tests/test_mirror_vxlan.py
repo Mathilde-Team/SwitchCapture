@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests pour le mirroring vers VLAN sonde + extension L2 VXLAN
 (`switch-capture mirror --mode vxlan`), piste de capture distante
 signalée par l'utilisateur le 04/09/2026 et imposée comme méthode valide

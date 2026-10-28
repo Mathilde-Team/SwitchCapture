@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # install.sh — installation complète de switch-capture, sans passer par un
 # paquet .deb/.rpm : détecte la distribution, installe les prérequis
 # système + Python, crée l'arborescence, copie l'application.

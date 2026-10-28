@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de la confirmation renforcée (retaper l'IP) avant désinstallation.
 
 Couvre la piste d'amélioration « Confirmation renforcée avant

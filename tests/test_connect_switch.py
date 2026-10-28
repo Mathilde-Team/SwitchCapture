@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests unitaires de `connect_switch` (switch_capture_core).
 
 Repérée à 0 % par l'audit `coverage.py` de session 54 : chaque appelant

@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 set -e
 
 # Best-effort, sur remove ET purge (dpkg supprime déjà les fichiers du

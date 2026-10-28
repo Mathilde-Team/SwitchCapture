@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """`UninstallThread` — séquence de désinstallation de la feature packet-capture.
 
 Poursuite du point 4 de `CLAUDE.md` (audit de couverture de

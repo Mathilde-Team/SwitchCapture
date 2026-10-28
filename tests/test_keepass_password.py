@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du repli KeePass (fichier `.kdbx`) pour le mot de passe SSH.
 
 Couvre la partie « repli sur un fichier KeePass si aucun trousseau système

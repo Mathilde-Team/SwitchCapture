@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Placement de `-v`/`--verbose` sur la ligne de commande — option globale
 du parseur racine (features.md, 06/09/2026, 7e session du jour).
 

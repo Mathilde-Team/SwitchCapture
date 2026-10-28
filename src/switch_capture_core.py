@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Logique métier de l'orchestrateur packet-capture HPE Comware.
 
 Ce module ne dépend d'aucun toolkit graphique : il expose les classes et

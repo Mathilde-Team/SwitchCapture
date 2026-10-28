@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Configuration pytest partagée : rend src/ importable pour tous les tests.
 
 switch_capture_core.py n'est pas packagé (pas de [build-system]/[project]

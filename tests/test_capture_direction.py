@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests pour build_capture_direction_clause et Config.capture_direction
 (point 6, features.md, « Comportement de capture »).
 

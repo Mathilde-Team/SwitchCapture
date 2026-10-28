@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de `SetupAndCaptureThread` (switch_capture_core).
 
 Couvre la dernière des six fonctions/classes sans couverture persistante

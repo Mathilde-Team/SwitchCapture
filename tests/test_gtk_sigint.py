@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du gestionnaire Ctrl+C (SIGINT) de l'app GTK4 (features.md,
 point 10, reformulé le 28/08/2026 : « Ctrl+C remonte toujours un
 Traceback/KeyboardInterrupt brut au lieu d'une sortie propre »).

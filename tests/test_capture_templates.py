@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests des modèles de capture réutilisables (switch_capture_core).
 
 Couvre la fonctionnalité #1 de la section « Pas fait » de features.md :

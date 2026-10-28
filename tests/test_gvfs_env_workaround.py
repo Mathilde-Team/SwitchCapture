@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Contournement GVfs/GOA pour le sélecteur de fichiers GTK (features.md,
 bugs 8/9/11/12 — "Erreur creating proxy … org.gtk.vfs.GoaVolumeMonitor",
 "Gtk-CRITICAL **: thaw_updates: assertion 'GTK_IS_FILE_SYSTEM_MODEL (model)'

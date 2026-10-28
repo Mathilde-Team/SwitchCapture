@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de complétude de l'i18n GUI (`switch_capture_gtk.py`) — point 13 de features.md.
 
 Convertit en test automatisé permanent la vérification faite manuellement

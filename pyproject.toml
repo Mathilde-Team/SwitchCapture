@@ -34,6 +34,7 @@ name = "switch-capture"
 version = "1.0.0"
 description = "Orchestrateur de capture réseau pour switches HPE Comware (5130/5140/5510/5520), avec CLI et interface graphique GTK4."
 readme = "README.md"
+license = "GPL-3.0-or-later"
 # Plancher réel documenté, pas une estimation : repli sur python3.9 pour el8
 # (Rocky/RHEL/CentOS Stream 8) quand python3.11 est indisponible — voir
 # install.sh et packaging-rpm/switch-capture.spec. Aucun plafond connu.

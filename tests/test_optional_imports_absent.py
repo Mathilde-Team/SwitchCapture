@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests des branches `except ImportError` en tête de `switch_capture_core.py`.
 
 Repérées à 0 % par l'audit `coverage.py` de session 54 (lignes 33-34, 39-41,

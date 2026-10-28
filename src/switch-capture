@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """switch-capture — point d'entrée unique (CLI + GTK4).
 
 Ce fichier EST /usr/bin/switch-capture : install.sh, build_deb.sh et le

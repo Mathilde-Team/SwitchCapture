@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Issue #68 : séquences de commandes du mirroring par port (« local » et
 « gre ») et cycle de vie de `MirrorThread`.
 

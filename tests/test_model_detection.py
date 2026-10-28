@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de `detect_model` / `detect_software_version` / `resolve_feature_bin`
 (switch_capture_core).
 

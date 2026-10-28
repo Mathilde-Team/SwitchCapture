@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Cohérence entre les options CLI de `switch-capture capture` et
 `src/docs/config.yaml.example` (features.md, 06/09/2026, 5e session du jour).
 

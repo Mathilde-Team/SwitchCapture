@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests pour build_capture_filter — masquage du trafic SSH/SCP outil<->switch
 dans le filtre de capture (point 5, features.md, « Filtre de capture »).
 

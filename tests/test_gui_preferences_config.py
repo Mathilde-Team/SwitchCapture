@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de la persistance des préférences GUI dans config.yaml.
 
 Couvre `switch_capture_core.load_gui_preferences`/`save_gui_preferences`,

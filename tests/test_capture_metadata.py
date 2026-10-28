@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de `write_capture_metadata` (switch_capture_core).
 
 Couvre l'une des six fonctions sans couverture persistante identifiées en
