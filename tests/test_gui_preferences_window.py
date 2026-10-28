@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du menu hamburger et de la page Préférences GTK4 (features.md,
 point 1 « Menu et préférences ») : retrait de slot/modèle/.bin forcé/
 keepass_path du formulaire principal, chargement au démarrage depuis

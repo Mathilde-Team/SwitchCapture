@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du lissage de réinjection TAP (switch_capture_core).
 
 Couvre la partie testable en isolation du point #1 de la section « Pas

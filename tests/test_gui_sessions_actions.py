@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests GTK4 des actions de la fenêtre principale (issue #86).
 
 Sessions (ajout, modification, suppression, inspection, test de connexion),

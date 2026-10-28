@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Invariant « modèle » de `SetupAndCaptureThread._prepare_switch` — clôture
 formelle de la seconde sous-piste du point 4 de `CLAUDE.md` (session 61).
 

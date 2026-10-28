@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du découplage téléchargement / injection TAP (switch_capture_core).
 
 Couvre le point #1 restant de la section « Pas fait » de features.md (hors

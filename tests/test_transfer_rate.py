@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests pour le débit de transfert moyen en direct (compute_average_throughput,
 format_transfer_rate) — voir la section dédiée dans features.md.
 

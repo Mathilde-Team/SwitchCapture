@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
 /* switch-capture-taphelper — aide privilégiée minimale pour le mode "tap".
  *
  * Problème (features.md, priorité 000 — urgente) : créer une interface TAP

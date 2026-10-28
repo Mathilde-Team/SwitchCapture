@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du câblage GTK4 des 4 réglages ajoutés au formulaire principal
 cette session : `hide_capture_traffic`, `capture_direction`,
 `archive_as_pcapng`, `tap_launch_wireshark` (voir features.md, sections

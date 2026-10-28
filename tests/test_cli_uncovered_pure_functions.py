@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Couverture pour plusieurs fonctions de `switch_capture_cli.py` repérées à
 0% via un audit `coverage.py` (session 51, jamais utilisé dans ce dépôt
 jusqu'ici — piste explicitement laissée ouverte en fin de session 50, puis

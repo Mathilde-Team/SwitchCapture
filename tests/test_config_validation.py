@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de validation de `Config.__post_init__` et `resolve_default_mount_point`.
 
 Repérées à 0 % par l'audit `coverage.py` de session 54 : `InspectConfig`

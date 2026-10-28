@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """App GTK4 pour piloter switch_capture_core, avec support multi-captures.
 
 Architecture en 5 pages navigables (Gtk.Stack + Gtk.StackSwitcher) reflétant

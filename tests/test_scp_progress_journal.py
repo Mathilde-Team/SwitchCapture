@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Issue #70 : progression SCP remontée jusqu'à la page « Journal ».
 
 Le cœur publie chaque palier de `make_scp_progress_logger` (mêmes paliers

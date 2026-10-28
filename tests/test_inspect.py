@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du mode dry run (« Inspecter » — modèle/version/features sans rien modifier).
 
 Couvre la piste d'amélioration « Mode "dry run" : bouton qui se contente de

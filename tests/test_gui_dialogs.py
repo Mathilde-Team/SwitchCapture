@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests des dialogues GTK4 sans classe dépréciée (issue #69).
 
 `Gtk.FileChooserNative` et `Gtk.MessageDialog` sont dépréciés depuis

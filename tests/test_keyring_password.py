@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du trousseau système (libsecret/GNOME Keyring) pour le mot de passe SSH.
 
 Couvre la piste d'amélioration « Trousseau système (libsecret/GNOME

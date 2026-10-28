@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du mode non-root pour les interfaces TAP (features.md, priorité 000
 — urgente : « Ne pas avoir besoin d'être root pour écouter une interface »).
 
