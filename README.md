@@ -225,5 +225,15 @@ ce dépôt. Détail session par session : [`docs/sessions/`](docs/sessions/index
 
 ## Licence
 
-À définir — un fichier `LICENSE` placeholder (MIT) est inclus dans ce
-dépôt en attendant un choix définitif.
+switch-capture est publié sous **GPL-3.0-or-later** (SOCLE §1). Le texte officiel de la GPLv3 se trouve dans [`LICENSE`](LICENSE), `pyproject.toml` déclare `license = "GPL-3.0-or-later"`, et chaque fichier de code porte l'en-tête `SPDX-License-Identifier: GPL-3.0-or-later`. Côté paquets : `License: GPL-3.0-or-later` et `%license LICENSE` dans le `.rpm` ; `/usr/share/doc/switch-capture/copyright` au format DEP-5 dans le `.deb` (source : `packaging/debian/copyright`).
+
+Les dépendances ne sont pas embarquées. Leurs licences, relevées sur PyPI, sont toutes compatibles avec la GPLv3 :
+
+| Dépendance | Licence |
+|---|---|
+| netmiko | MIT |
+| paramiko | LGPL-2.1 |
+| scp | LGPL-2.1-or-later |
+| PyYAML, loguru | MIT |
+| keyring (optionnelle) | MIT |
+| pykeepass (optionnelle) | GPL-3.0 |
