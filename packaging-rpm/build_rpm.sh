@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 # build_rpm.sh — génère le .rpm switch-capture
 #
 # Ne contient QUE les métadonnées RPM (packaging-rpm/switch-capture.spec +
@@ -57,6 +58,7 @@ cp "$SRC_DIR/docs/README-feature-bin.md" "$STAGE_DIR/docs/README-feature-bin.md"
 cp "$SRC_DIR/docs/CAPTURE-METHODS.md" "$STAGE_DIR/docs/CAPTURE-METHODS.md"
 cp "$SRC_DIR/docs/config.yaml.example" "$STAGE_DIR/docs/config.yaml.example"
 cp "$INSTALL_DOC" "$STAGE_DIR/docs/INSTALL.md"   # doc spécifique .rpm, pas la générique
+cp "$ROOT_DIR/LICENSE" "$STAGE_DIR/LICENSE"   # %license du spec (issue #105)
 mkdir -p "$STAGE_DIR/icons/hicolor/scalable/apps"
 cp "$SRC_DIR/icons/hicolor/scalable/apps/org.transcende.switch_capture.svg" \
     "$STAGE_DIR/icons/hicolor/scalable/apps/org.transcende.switch_capture.svg"

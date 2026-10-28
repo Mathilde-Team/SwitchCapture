@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 # build_deb.sh — génère switch-capture_<version>_<arch>.deb
 #
 # Ne contient QUE les métadonnées .deb (packaging/debian/DEBIAN/). Le code
@@ -25,6 +26,7 @@ ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 SRC_DIR="$ROOT_DIR/src"
 META_DIR="$SCRIPT_DIR/debian/DEBIAN"
 INSTALL_DOC="$SCRIPT_DIR/INSTALL-deb.md"
+COPYRIGHT_FILE="$SCRIPT_DIR/debian/copyright"
 
 if ! command -v dpkg-deb >/dev/null 2>&1; then
     echo "dpkg-deb introuvable. Installez-le avec : sudo apt install dpkg-dev" >&2
@@ -41,7 +43,7 @@ PKG_NAME="switch-capture_${VERSION}_${BUILD_ARCH}"
 BUILD_DIR="$SCRIPT_DIR/build/${PKG_NAME}"
 OUT_FILE="$SCRIPT_DIR/${PKG_NAME}.deb"
 
-for f in "$SRC_DIR/switch_capture_core.py" "$SRC_DIR/switch_capture_cli.py" "$SRC_DIR/switch-capture" "$SRC_DIR/switch_capture_gtk.py" "$SRC_DIR/icons/hicolor/scalable/apps/org.transcende.switch_capture.svg" "$SRC_DIR/org.transcende.switch_capture.desktop" "$SRC_DIR/helpers/switch-capture-taphelper.c" "$INSTALL_DOC"; do
+for f in "$SRC_DIR/switch_capture_core.py" "$SRC_DIR/switch_capture_cli.py" "$SRC_DIR/switch-capture" "$SRC_DIR/switch_capture_gtk.py" "$SRC_DIR/icons/hicolor/scalable/apps/org.transcende.switch_capture.svg" "$SRC_DIR/org.transcende.switch_capture.desktop" "$SRC_DIR/helpers/switch-capture-taphelper.c" "$INSTALL_DOC" "$COPYRIGHT_FILE"; do
     [ -f "$f" ] || { echo "fichier source manquant : $f" >&2; exit 1; }
 done
 if ! command -v gcc >/dev/null 2>&1; then
@@ -83,6 +85,9 @@ cp "$SRC_DIR/docs/README-feature-bin.md" "$BUILD_DIR/usr/share/doc/switch-captur
 cp "$SRC_DIR/docs/CAPTURE-METHODS.md" "$BUILD_DIR/usr/share/doc/switch-capture/CAPTURE-METHODS.md"
 cp "$SRC_DIR/docs/config.yaml.example" "$BUILD_DIR/usr/share/doc/switch-capture/config.yaml.example"
 cp "$INSTALL_DOC" "$BUILD_DIR/usr/share/doc/switch-capture/INSTALL.md"   # doc spécifique .deb, pas la générique
+# Licence (issue #105) : fichier copyright au format DEP-5, emplacement
+# imposé par la Debian Policy (§12.5).
+cp "$COPYRIGHT_FILE" "$BUILD_DIR/usr/share/doc/switch-capture/copyright"
 
 echo "==> Compilation de switch-capture-taphelper (mode TAP sans root ; cap_net_admin+ep positionné par DEBIAN/postinst)"
 gcc -O2 -o "$BUILD_DIR/usr/lib/switch-capture/switch-capture-taphelper" "$SRC_DIR/helpers/switch-capture-taphelper.c"

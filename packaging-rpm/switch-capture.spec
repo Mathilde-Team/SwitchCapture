@@ -16,7 +16,7 @@ Name:           switch-capture
 Version:        1.0.0
 Release:        1%{?dist}
 Summary:        Orchestrateur de capture packet-capture pour switches HPE Comware
-License:        Proprietary
+License:        GPL-3.0-or-later
 URL:            https://example.invalid/switch-capture
 Source0:        %{name}-%{version}.tar.gz
 # Architecture-spécifique depuis l'ajout de switch-capture-taphelper (binaire
@@ -211,6 +211,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %files
+%license LICENSE
 %{_bindir}/switch-capture
 /usr/lib/switch-capture/switch_capture_core.py
 /usr/lib/switch-capture/switch_capture_cli.py
