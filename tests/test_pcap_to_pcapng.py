@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de la conversion .pcap classique -> .pcapng à l'archivage.
 
 Couvre le point #19 de la todo-list de `features.md` (« Privilégier pcapng

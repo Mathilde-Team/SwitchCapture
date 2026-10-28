@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Issue #70 : la page « Journal » affiche le dernier palier SCP de chaque
 capture en cours, lu dans `SharedState.scp_progress` par
 `_refresh_journal` (thread GTK) — le thread de transfert n'appelle jamais

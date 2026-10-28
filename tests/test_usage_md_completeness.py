@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Cohérence entre les options CLI de `switch-capture capture`/`inspect`/
 `mirror`/`analyze-pacing` et les tables « Référence des options »
 correspondantes de `src/docs/USAGE.md` (features.md, 06/09/2026, 6e session

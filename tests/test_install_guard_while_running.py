@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du garde-fou empêchant de lancer une installation pendant qu'une
 capture est déjà en cours (voir features.md, section « Comportement de
 capture », point 7 : « Empêcher le lancement d'une installation si une

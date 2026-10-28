@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de la capture et de la rotation des fichiers (issue #86).
 
 `SetupAndCaptureThread` : capture locale (`packet-capture … write flash:`)

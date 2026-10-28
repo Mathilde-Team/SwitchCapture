@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests de `run_capture` (switch_capture_cli.py).
 
 Piste laissée ouverte en fin de session 52 (« poursuivre l'audit de

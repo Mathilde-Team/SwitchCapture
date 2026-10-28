@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Fusion YAML + arguments CLI pour `build_config`/`build_inspect_config`
 (`switch_capture_cli.py`).
 

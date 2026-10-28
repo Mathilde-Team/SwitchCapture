@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests pour le flow mirroring filtré par ACL (« Filtrage ACL pour
 `switch-capture mirror` », piste d'amélioration listée dans CLAUDE.md,
 traitée le 01/09/2026 — voir aussi CAPTURE-METHODS.md section 4, dont la

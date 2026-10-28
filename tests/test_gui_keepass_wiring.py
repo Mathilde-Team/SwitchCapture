@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Tests du câblage GTK4 du repli KeePass pour la mémorisation du mot de
 passe SSH (voir features.md, section « Repli KeePass pour le mot de passe
 SSH (27/08/2026, suite) »).
