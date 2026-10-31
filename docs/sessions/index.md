@@ -78,3 +78,4 @@ l'ancien pavé « Suivi des sessions » de `features.md`.
 | 63 | 16/09/2026 | [Adoption d'uv pour la gestion des dépendances (« remplacer poetry », jamais utilisé sur ce projet) — préserve le choix « pas de packaging » (16/09/2026)](session-63.md) |
 | 64 | 10/10/2026 | [Couverture des séquences de mirroring local/GRE et du cycle de vie de `MirrorThread` : switch_capture_core.py 84→88 % (issue #68)](session-64.md) |
 | 65 | 10/10/2026 | [Progression SCP affichée dans la page « Journal » (issue #70)](session-65.md) |
+| 66 | 31/10/2026 | [Alias de détection 5510/5520 vérifiés sur des sorties `display version` réelles (issue #66)](session-66.md) |
