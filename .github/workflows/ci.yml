@@ -23,6 +23,9 @@ jobs:
       - name: Checkout du dépôt
         uses: actions/checkout@v7
 
+      - name: Garde-fous de publication sur tag
+        run: python3 tests/test_workflow_release.py
+
       - name: Dépendances système (GTK4, introspection, Xvfb, D-Bus, GVfs)
         # libgirepository-2.0-dev + libcairo2-dev + pkg-config : compilation
         # de PyGObject/pycairo dans le venv ; gvfs + dbus : reproduction réelle
@@ -69,7 +72,7 @@ jobs:
     # la protection de branche.
     needs: gtk
     if: ${{ !cancelled() }}
-    runs-on: ${{ fromJSON(vars.RUNS_ON_LINUX || '{"group":"maison","labels":["self-hosted","linux"]}') }}
+    runs-on: ${{ fromJSON(vars.RUNS_ON_LINUX || '"ubuntu-latest"') }}
     timeout-minutes: 30
 
     steps:

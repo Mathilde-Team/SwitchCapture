@@ -4,6 +4,10 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Les numéros 
 
 ## [Non publié]
 
+- CI et publication : repli GitHub autorisé, publication manuelle sur un tag
+  déjà livré dans main, vérification d’ascendance et archives du tag exact.
+
+
 ### Modifié
 - **Licence** (#105) : le `LICENSE` MIT provisoire est remplacé par le texte officiel de la GPLv3, et le projet passe en GPL-3.0-or-later. Ajouts : `license` dans `pyproject.toml`, en-têtes SPDX, `License: GPL-3.0-or-later` et `%license LICENSE` dans le spec RPM, `copyright` DEP-5 installé par le `.deb`, section Licence du README avec les licences des dépendances, `tests/test_licence.py`.
 
