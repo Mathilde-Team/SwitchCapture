@@ -31,9 +31,8 @@
   partir du même point de départ) — aucune régression, +4 tests nets après élimination des
   doublons de couverture entre les deux branches.
 - Reste ouvert : mesure réelle de durée de transfert SCP contre un switch physique
-  (voir « Pas fait » ci-dessous, bloqué faute de switch réel dans ce sandbox) ; alias de
-  détection modèle `5510`/`5520` au format collé plutôt qu'à tiret réel HPE (voir « Modèles
-  matériels » ci-dessous, bloqué faute d'exemple réel vérifié pour ces modèles).
+  (voir « Pas fait » ci-dessous, bloqué faute de switch réel dans ce sandbox) (l'alias de
+  détection modèle `5510`/`5520` est corrigé en [session 66](sessions/session-66.md), issue #66).
 - [Session 56](sessions/session-56.md) (12/09/2026) : audit ciblé, via Context7, de la
   documentation à jour de 6 dépendances externes (PyGObject/GTK4, netmiko, paramiko, `scp`,
   `keyring`, pykeepass, ruff) contre l'usage actuel du code — 5 candidats identifiés, voir
@@ -355,16 +354,17 @@ apportée suite à un retour direct, une version antérieure de ce dépôt
 supposait à tort 5510/5520 natifs). `3600 V2` (Comware 5) : non supporté,
 signalé explicitement.
 
-**Limite connue (session 08, verrouillée par des tests en [session
-50](sessions/session-50.md))** : les alias de détection automatique
-(`detect_model`) pour `5130`/`5140` ont été élargis au format réel HPE à
-tiret (`5130-28-EI`) après une régression, mais `5510`/`5520` (ainsi que
-`MSR4000`/`3600v2`) n'ont **pas** été audités faute de sortie `display
-version` réelle disponible pour ces modèles — leurs alias sont restés
-sous forme collée (`"5510HI"`), qui ne correspondrait vraisemblablement
-pas à une sortie switch réelle si elle suit le même schéma que 5130/5140.
-Nécessite un exemple réel vérifié avant correction (voir
-`tests/test_model_detection.py`, section « 5510/5520 »).
+**Alias de détection 5510/5520 (corrigés en [session
+66](sessions/session-66.md), issue #66)** : la limite connue depuis la
+session 08 (alias collés `"5510HI"` jamais audités, verrouillés en [session
+50](sessions/session-50.md)) est levée. Trois sorties `display version`
+réelles (`tests/fixtures/display_version/`, sources dans `SOURCES.md`)
+montrent une ligne châssis à espaces (« HPE 5510 24G 4SFP+ HI 1-slot
+Switch JH145A », « HPE 5520 24G 4SFP+ HI Swch R8M25A ») : ni collée, ni à
+tiret. La forme collée ne correspondait qu'aux noms des fichiers d'image
+(`flash:/5510hi-cmw710-boot-….bin`), donc la détection échouait dès que les
+images étaient renommées. Alias `"HPE 5510 "`/`"HPE 5520 "` ajoutés.
+`MSR4000`/`3600v2` restent non audités faute de sortie réelle.
 
 ### Installation — 3 méthodes équivalentes
 

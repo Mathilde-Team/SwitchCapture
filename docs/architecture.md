@@ -565,13 +565,11 @@ varie en plus selon la version logicielle, plus finement que ce que
 Limite connue sur les alias eux-mêmes (session 08, verrouillée par des
 tests en [session 50](sessions/session-50.md)) : `5130`/`5140` utilisent
 le format réel HPE à tiret (`"5130-28-EI"`), vérifié et corrigé après une
-régression. `5510`/`5520` (ainsi que `MSR4000`/`3600v2`) n'ont, eux,
-jamais été audités faute de sortie `display version` réelle disponible
-pour ces modèles — leurs alias sont restés sous forme collée
-(`"5510HI"`), qui ne matcherait vraisemblablement pas une sortie switch
-réelle si elle suit le même schéma que 5130/5140. Voir
-`tests/test_model_detection.py` pour le comportement actuel verrouillé
-des deux côtés (glued/dash).
+régression. `5510`/`5520` sont vérifiés depuis la session 66 (issue #66) sur des
+sorties `display version` réelles (`tests/fixtures/display_version/`) :
+ligne châssis à espaces (`"HPE 5510 "`, `"HPE 5520 "`), la forme collée
+(`"5510hi"`) ne venant que des noms de fichiers d'image. `MSR4000`/`3600v2`
+n'ont, eux, jamais été audités faute de sortie réelle disponible.
 
 Pour le 3600 V2 (Comware 5) : il n'existe pas de commande `packet-capture`
 à ring-buffer ni de mécanisme `install activate feature`, et `packet-capture

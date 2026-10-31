@@ -135,13 +135,21 @@ MODEL_PROFILES: dict[str, dict] = {
         "notes": "Feature packet-capture installable via 'install activate feature'",
     },
     "5510": {
-        "aliases": ("5510hi", "5510HI"),
+        # Issue #66 : alias vérifiés sur des sorties 'display version'
+        # réelles (tests/fixtures/display_version/). La ligne châssis est à
+        # espaces (« HPE 5510 24G 4SFP+ HI 1-slot Switch JH145A »), ni
+        # collée ni à tiret. La forme collée « 5510hi » n'apparaît que dans
+        # les noms des fichiers d'image (« flash:/5510hi-cmw710-boot-….bin ») :
+        # conservée, mais elle ne suffit pas si les images sont renommées.
+        "aliases": ("HPE 5510 ", "5510hi", "5510HI"),
         "comware": 7,
         "packet_capture": "installable",
         "notes": "Feature packet-capture installable via 'install activate feature'",
     },
     "5520": {
-        "aliases": ("5520hi", "5520HI"),
+        # Issue #66 : même constat que 5510 (« HPE 5520 24G 4SFP+ HI Swch
+        # R8M25A », images « flash:/5520hi-cmw710-….bin »).
+        "aliases": ("HPE 5520 ", "5520hi", "5520HI"),
         "comware": 7,
         "packet_capture": "installable",
         "notes": "Feature packet-capture installable via 'install activate feature'",

@@ -183,12 +183,12 @@ seul à traiter à la fois) :
 1. Mesurer la durée SCP réelle contre un switch physique dès qu'un accès
    est disponible — seul point technique encore ouvert (voir « Pas fait »
    dans le backlog).
-2. Corriger la limite connue (documentée depuis la session 08, verrouillée
-   par des tests dédiés en session 50) sur les alias de détection modèle
-   `5510`/`5520` : forme collée (`"5510HI"`) plutôt que le format à tiret
-   réel HPE confirmé pour 5130/5140 (`"5130-28-HI"`) — nécessite un
-   exemple réel de sortie `display version` pour un 5510/5520 avant de
-   corriger à l'aveugle (aucun disponible dans ce dépôt à ce jour).
+2. ~~Alias de détection modèle `5510`/`5520`~~ — **fait en session 66
+   (issue #66)** : trois sorties `display version` réelles en fixtures
+   (`tests/fixtures/display_version/`, sources dans `SOURCES.md`). Format
+   réel à espaces (« HPE 5510 24G 4SFP+ HI 1-slot Switch »), ni collé ni à
+   tiret ; la forme collée ne venait que des noms d'image. Alias
+   `"HPE 5510 "`/`"HPE 5520 "` ajoutés — détail : `docs/sessions/session-66.md`.
 3. Relecture linguistique du `.po` en_US : faite par IA le 24/10/2026
    (issue #67, accord de Mathilde du 13/10 faute d'anglophone natif),
    mention « relu par IA » dans `Last-Translator`. Une relecture native

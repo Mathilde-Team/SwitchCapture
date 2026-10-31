@@ -1,0 +1,28 @@
+HPE Comware Software, Version 7.1.070, Release 6536
+Copyright (c) 2010-2021 Hewlett Packard Enterprise Development LP
+HPE 5520 24G 4SFP+ HI Swch R8M25A uptime is 0 weeks, 0 days, 0 hours, 8 minutes
+Last reboot reason : User reboot
+Boot image: flash:/5520hi-cmw710-boot-r6536.bin
+Boot image version: 7.1.070, Release 6536
+  Compiled Jun 16 2021 11:00:00
+System image: flash:/5520hi-cmw710-system-r6536.bin
+System image version: 7.1.070, Release 6536
+Compiled Jun 16 2021 11:00:00
+Feature image(s) list:
+  flash:/5520hi-cmw710-freeradius-r6536.bin, version: 7.1.070, Release 6536
+    Compiled Jun 16 2021 11:00:00
+  flash:/5520hi-cmw710-escan-r6536.bin, version: 7.1.070, Release 6536
+    Compiled Jun 16 2021 11:00:00
+Slot 1:
+Uptime is 0 weeks,0 days,0 hours,8 minutes
+5520 24G 4SFP+ HI Swch with 2 Processors
+BOARD TYPE:         5520 24G 4SFP+ HI Swch
+DRAM:               2048M bytes
+FLASH:              512M bytes
+PCB 1 Version:      VER.B
+Bootrom Version:    119
+CPLD 1 Version:     001
+Release Version:    HPE 5520 24G 4SFP+ HI Swch R8M26A-6536
+Patch Version  :    None
+Reboot Cause  :     UserReboot
+[SubSlot 0] 48GE+4SFP Plus
