@@ -1,0 +1,27 @@
+HPE Comware Software, Version 7.1.070, Release 3506P02
+Copyright (c) 2010-2019 Hewlett Packard Enterprise Development LP
+HPE 5510 24G 4SFP+ HI 1-slot Switch JH145A uptime is 7 weeks, 5 days, 20
+  hours, 58 minutes
+Last reboot reason : User reboot
+Boot image: flash:/5510hi-cmw710-boot-r3506p02.bin
+  Boot image version: 7.1.070, Release 3506P02
+  Compiled Dec 16 2019 11:00:00
+  System image: flash:/5510hi-cmw710-system-r3506p02.bin
+System image version: 7.1.070, Release 3506P02
+  Compiled Dec 16 2019 11:00:00
+  Feature image(s) list:
+  flash:/5510hi-cmw710-freeradius-r3506p02.bin, version: 7.1.070
+  Compiled Dec 16 2019 11:00:00
+Slot 1:
+  Uptime is 7 weeks,5 days,20 hours,58 minutes
+  5510 24G 4SFP+ HI 1-slot Switch with 2 Processor
+  BOARD TYPE: 5510 24G 4SFP+ HI 1-slot Switch
+  DRAM: 1984M bytes
+FLASH: 512M bytes
+  PCB 1 Version: VER.A
+  Bootrom Version: 127
+  CPLD 1 Version: 003
+  Release Version: HPE 5510 24G 4SFP+ HI 1-slot Switch JH145A-3506P02
+  Patch Version : None
+  Reboot Cause : UserReboot
+  [SubSlot 0] 24GE+4SFP Plus

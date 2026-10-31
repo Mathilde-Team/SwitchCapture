@@ -12,24 +12,21 @@ comme critique par `docs/architecture.md`) et par le mode dry run
 `detect_software_version` mais n'est testé que via ses propres réponses
 `FakeConn`, jamais ces deux fonctions en isolation).
 
-Point d'attention découvert en écrivant ces tests, pas corrigé ici (portée
-volontairement limitée à la couverture, pas un correctif) : la session 08
-(voir `docs/sessions/session-08.md`) a élargi les alias `5130EI`/`5130HI`/
-`5140EI`/`5140HI` au format réel HPE (suffixe de gamme après le numéro de
-port, ex. « 5130-28-EI ») après une régression où la forme collée seule
-(« 5130EI ») ne matchait aucune sortie `display version` réelle. Cette même
-session note explicitement, en limite connue, que `MSR4000`/`5510`/`5520`/
-`3600v2` n'ont **pas** été audités faute de sortie réelle disponible pour
-ces modèles — leurs alias sont restés sous forme collée (`"5510HI"`, pas de
-variante à tiret). Les tests ci-dessous couvrent donc le comportement RÉEL
-du code tel qu'il existe aujourd'hui pour 5510/5520 (alias collé), et
-ajoutent un test dédié qui verrouille explicitement cette limite connue
-(texte au format à tiret, cohérent avec 5130/5140 désormais corrigés, non
-reconnu) plutôt que de la corriger silencieusement en marge d'une tâche de
-couverture de tests.
+Détection 5510/5520 (issue #66) : la session 50 verrouillait une limite
+connue depuis la session 08 (alias collés « 5510HI » jamais confrontés à une
+sortie réelle). Des sorties `display version` réelles sont désormais en
+fixtures (`tests/fixtures/display_version/`, sources dans `SOURCES.md`) : la
+ligne châssis est à espaces (« HPE 5510 24G 4SFP+ HI 1-slot Switch »), et la
+forme collée n'apparaît que dans les noms de fichiers d'image. Les tests
+ci-dessous vérifient la détection sur ces sorties exactes, y compris quand
+les images ont été renommées.
 """
 
 from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
 
 from switch_capture_core import detect_model, detect_software_version, resolve_feature_bin
 
@@ -96,38 +93,68 @@ def test_detect_model_empty_string_returns_none():
 
 
 # --------------------------------------------------------------------- #
-# detect_model — 5510/5520 : comportement réel + limite connue (session 08)
+# detect_model — 5510/5520 sur sorties réelles (issue #66)
 # --------------------------------------------------------------------- #
 
+FIXTURES_DISPLAY_VERSION = Path(__file__).parent / "fixtures" / "display_version"
 
-def test_detect_model_5510_matches_current_glued_alias():
-    """Comportement RÉEL du code : alias `"5510HI"` collé (pas de tiret),
-    jamais audité contre une sortie switch réelle (session 08). Texte
-    contrivé pour contenir littéralement ce collé, à seule fin de fixer le
-    comportement actuel — pas une sortie `display version` HPE authentique."""
-    version_output = "HPE Comware Software, Version 7.1.070, Release 3208P01\nHPE5510HI Switch\n"
-    assert detect_model(version_output) == "5510"
-
-
-def test_detect_model_5520_matches_current_glued_alias():
-    version_output = "HPE Comware Software, Version 7.1.070, Release 3208P01\nHPE5520HI Switch\n"
-    assert detect_model(version_output) == "5520"
+SORTIES_REELLES = {
+    "5510hi_jh145a_r3506p02.txt": "5510",
+    "5510hi_jh147a_r3507p10.txt": "5510",
+    "5520hi_r8m25a_r6536.txt": "5520",
+}
 
 
-def test_detect_model_5510_dash_format_not_recognized_known_limitation():
-    """Verrouille la limite connue documentée en session 08 : contrairement à
-    5130/5140 (corrigés la même session), les alias 5510/5520 n'ont jamais
-    été élargis au format à tiret réel HPE faute d'exemple vérifié. Un texte
-    cohérent avec le format confirmé pour 5130/5140 (« 5510-28-HI ») n'est
-    donc PAS reconnu aujourd'hui — ce test documente ce fait plutôt que de
-    supposer silencieusement un comportement corrigé."""
-    version_output = "HPE Comware Software, Version 7.1.070, Release 3208P01\nHPE 5510-28-HI Switch\n"
-    assert detect_model(version_output) is None
+def _lire_fixture(nom: str) -> str:
+    return (FIXTURES_DISPLAY_VERSION / nom).read_text(encoding="utf-8")
 
 
-def test_detect_model_5520_dash_format_not_recognized_known_limitation():
-    version_output = "HPE Comware Software, Version 7.1.070, Release 3208P01\nHPE 5520-52-HI Switch\n"
-    assert detect_model(version_output) is None
+def _sans_noms_d_image(sortie: str) -> str:
+    """Retire les lignes citant un fichier d'image (« flash:/… »), seules à
+    contenir la forme collée « 5510hi »/« 5520hi » : simule des images
+    renommées et isole la ligne châssis."""
+    return "".join(ligne for ligne in sortie.splitlines(keepends=True) if "flash:/" not in ligne)
+
+
+def test_fixtures_display_version_toutes_utilisees():
+    """Chaque fixture est couverte, et chaque fixture citée existe."""
+    presentes = {f.name for f in FIXTURES_DISPLAY_VERSION.glob("*.txt")}
+    assert presentes == set(SORTIES_REELLES)
+
+
+@pytest.mark.parametrize(("nom", "attendu"), sorted(SORTIES_REELLES.items()))
+def test_detect_model_sortie_reelle(nom, attendu):
+    assert detect_model(_lire_fixture(nom)) == attendu
+
+
+@pytest.mark.parametrize(("nom", "attendu"), sorted(SORTIES_REELLES.items()))
+def test_detect_model_sortie_reelle_images_renommees(nom, attendu):
+    """Régression #66 : avant correction, ces sorties n'étaient reconnues que
+    grâce au nom des fichiers d'image ; sans eux, `detect_model` renvoyait
+    None. La ligne châssis seule doit suffire."""
+    sortie = _sans_noms_d_image(_lire_fixture(nom))
+    assert "flash:/" not in sortie
+    assert "HI " in sortie
+    assert detect_model(sortie) == attendu
+
+
+@pytest.mark.parametrize("nom", sorted(SORTIES_REELLES))
+def test_detect_model_sortie_reelle_version_logicielle(nom):
+    """La release extraite est celle de la première ligne de la sortie."""
+    sortie = _lire_fixture(nom)
+    attendu = sortie.splitlines()[0].rsplit("Release ", 1)[1].strip()
+    assert detect_software_version(sortie) == attendu
+
+
+def test_detect_model_5510_et_5520_ne_se_confondent_pas():
+    assert detect_model(_lire_fixture("5520hi_r8m25a_r6536.txt")) != "5510"
+    assert detect_model(_lire_fixture("5510hi_jh145a_r3506p02.txt")) != "5520"
+
+
+def test_detect_model_5510_alias_colle_seul_toujours_reconnu():
+    """La forme collée reste reconnue (noms d'image réels « 5510hi-cmw710-… »)."""
+    assert detect_model("Boot image: flash:/5510hi-cmw710-boot-r3507p10.bin\n") == "5510"
+    assert detect_model("Boot image: flash:/5520hi-cmw710-boot-r6536.bin\n") == "5520"
 
 
 # --------------------------------------------------------------------- #
